@@ -1,4 +1,4 @@
-![Banner](https://github.com/m-irabot/m-irabot/blob/main/image/banner.png)
+![Banner](https://github.com/m-irabot/m-irabot/blob/main/images/Banner.png)
 
 
 ## 🌟 About Me
