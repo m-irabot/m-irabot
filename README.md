@@ -16,6 +16,8 @@ Welcome to my GitHub profile! Here's a little about me:
 ## 📈 My GitHub Stats:
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=m-irabot&show_icons=true&count_private=true&theme=radical)
 
+![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=m-irabot&theme=github)
+
 ## 📬 Let's Connect
 - 🌐 [Portfolio Website](#) (Coming soon!)
 
