@@ -1,6 +1,5 @@
-![Banner GIF](https://github.com/m-irabot/m-irabot/blob/main/Banner_V.mp4)
+![Banner](https://github.com/m-irabot/m-irabot/blob/main/image/banner.png)
 
-***Welcome to my GitHub profile!***
 
 ## 🌟 About Me
 - 🌱 I’m learning **web development** with HTML, CSS,     
