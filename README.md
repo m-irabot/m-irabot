@@ -21,4 +21,4 @@
 ## 📬 Let's Connect
 - 🌐 [Portfolio Website](#) (Coming soon!)
 ## 📞 Contact Me:
-- [![Discord](https://img.shields.io/badge/Discord-m_irabot%230123-blue?logo=discord)](https://discord.com/M_Irabot/790859168822722581)
+- [![Discord](https://img.shields.io/badge/Discord-M_Irabot-blue?logo=discord)](https://discord.com/users/790859168822722581)
