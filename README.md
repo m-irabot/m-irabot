@@ -1,4 +1,4 @@
-# Hi, I'm m-irabot 👋
+![Banner GIF](https://github.com/m-irabot/m-irabot/blob/main/Banner_V.mp4)
 
 ***Welcome to my GitHub profile!***
 
