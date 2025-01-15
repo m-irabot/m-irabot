@@ -1,6 +1,6 @@
 # Hi, I'm m-irabot 👋
 
-Welcome to my GitHub profile! Here's a little about me:
+***Welcome to my GitHub profile!***
 
 ## 🌟 About Me
 - 🌱 I’m learning **web development** with HTML, CSS,     
@@ -9,15 +9,14 @@ Welcome to my GitHub profile! Here's a little about me:
    boost my skills.
 - 🎯 My goal: Build amazing web applications!
 
-## 💻 My Skills
-- **Languages**: HTML, CSS, Python, C, C++.
-- **Tools**: Git, GitHub, Visual Studio Code
+## 🛠️ My Skills:
+- **Languages**: ![HTML](https://img.shields.io/badge/HTML-orange) ![CSS](https://img.shields.io/badge/CSS-blue) ![JavaScript](https://img.shields.io/badge/JavaScript-yellow) ![PHP](https://img.shields.io/badge/PHP-purple)
+- **Tools**: ![Git](https://img.shields.io/badge/Git-red) ![GitHub](https://img.shields.io/badge/GitHub-lightgrey) ![VSCode](https://img.shields.io/badge/VSCode-blue)
 
-## 📈 My GitHub Stats:
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=m-irabot&show_icons=true&count_private=true&theme=radical)
+## 🌟 My GitHub Stats:
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=m-irabot&show_icons=true&theme=radical)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=m-irabot&layout=compact&theme=radical)
 
-![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=m-irabot&theme=github)
 
 ## 📬 Let's Connect
 - 🌐 [Portfolio Website](#) (Coming soon!)
-
