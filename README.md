@@ -1,16 +1,21 @@
-## Hi there 👋
+# Hi, I'm m-irabot 👋
 
-<!--
-**m-irabot/m-irabot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Welcome to my GitHub profile! Here's a little about me:
 
-Here are some ideas to get you started:
+## 🌟 About Me
+- 🌱 I’m learning **web development** with HTML, CSS,     
+   JavaScript, and PHP.
+- 💻 Currently exploring Git, GitHub, and Visual Studio Code to 
+   boost my skills.
+- 🎯 My goal: Build amazing web applications!
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 💻 My Skills
+- **Languages**: HTML, CSS, Python, C, C++.
+- **Tools**: Git, GitHub, Visual Studio Code
+
+## 📈 My GitHub Stats:
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=m-irabot&show_icons=true&count_private=true&theme=radical)
+
+## 📬 Let's Connect
+- 🌐 [Portfolio Website](#) (Coming soon!)
+
