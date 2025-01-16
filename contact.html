@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="public.css">
+  <script>
+    // Function to handle form submission asynchronously
+    function submitForm(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      const formData = { name, email, message };
+
+      // Using fetch API to send data to the server
+      fetch('/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Message sent successfully');
+        document.getElementById('contact-form').reset();
+      })
+      .catch(error => {
+        alert('Error sending message');
+        console.error(error);
+      });
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Contact Me</h1>
+    <nav>
+      <a href="public.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="post.html">Posts</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Get in Touch</h2>
+
+    <!-- Contact Form -->
+    <form id="contact-form" onsubmit="submitForm(event)">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <h3>Contact Details</h3>
+    <p>If you prefer, you can also reach me through these channels:</p>
+    <ul>
+      <li>Email: <a href="mailto:oklaws.in@gmail.com">oklaws.in@gmail.com</a></li>
+      <li>Discord: <a href="https://discord.com/users/790859168822722581" target="_blank">M_Irabot</a></li>
+    </ul>
+
+    <h3>Location</h3>
+    <!-- Embedding a Google Map or custom map -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14490.064527397784!2d93.93314722253126!3d24.77777412870561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3749265fcfe5ca57%3A0xb4fb166963dd97a2!2sSingjamei%2C%20Imphal%2C%20Manipur!5e0!3m2!1sen!2sin!4v1737029549081!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 m-irabot</p>
+  </footer>
+</body>
+</html>

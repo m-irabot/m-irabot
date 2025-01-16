@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posts</title>
+  <link rel="stylesheet" href="public.css">
+</head>
+<body>
+  <header>
+    <h1>Posts</h1>
+    <nav>
+      <a href="public.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="post.html">Posts</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section id="create-post">
+      <h2>Share Your Thoughts</h2>
+      <form id="postForm" enctype="multipart/form-data">
+        <textarea id="postContent" name="content" placeholder="Write your thoughts here..." required></textarea><br><br>
+        <label for="mediaUpload">Attach a photo or video:</label>
+        <input type="file" id="mediaUpload" name="media"><br><br>
+        <button type="submit">Post</button>
+      </form>
+    </section>
+
+    <section id="posts">
+      <h2>All Posts</h2>
+      <!-- Dynamic posts will load here -->
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 m-irabot</p>
+  </footer>
+  <script src="public.js"></script>
+</body>
+</html>
