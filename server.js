@@ -1,116 +1,85 @@
 const express = require('express');
-const mysql = require('mysql2');
 const multer = require('multer');
 const path = require('path');
+const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 
-// Create the Express app
+// Set up the app and middleware
 const app = express();
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
+app.use('/uploads', express.static('uploads'));
 
-// Middleware
-app.use(express.static(path.join(__dirname, 'public'))); // Serve static files
-app.use(bodyParser.json()); // Parse JSON bodies
-app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
-
-// Configure multer for file uploads
-const upload = multer({ dest: path.join(__dirname, 'uploads/') });
-
-// MySQL Connection
+// Set up MySQL database connection
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'MySQL@7085',
-  database: 'portfolio'
+  password: '', // Replace with your database password
+  database: 'portfolio',
 });
 
-// Connect to MySQL
-db.connect((err) => {
-  if (err) {
-    console.error('Error connecting to the database:', err);
-    process.exit(1);
-  }
-  console.log('Connected to the MySQL database.');
+// Set up multer for file upload (for media)
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname)); // Add timestamp to avoid file name conflicts
+  },
+});
+const upload = multer({ storage });
+
+// Handle contact form submission
+app.post('/contact', (req, res) => {
+  const { name, email, message } = req.body;
+  
+  // Insert the contact message into the database (optional)
+  const sql = 'INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)';
+  db.query(sql, [name, email, message], (err) => {
+    if (err) {
+      console.error('Error saving contact message:', err);
+      return res.status(500).json({ error: 'Failed to send message' });
+    }
+    res.status(200).json({ message: 'Message sent successfully' });
+  });
 });
 
-// Routes
-
-// Serve the main page
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// Create a new post
+// Handle post submission (with optional media file)
 app.post('/posts', upload.single('media'), (req, res) => {
   const { content } = req.body;
   const media = req.file ? req.file.filename : null;
 
+  // Insert the post into the database (with content and optional media)
   const sql = 'INSERT INTO posts (content, media) VALUES (?, ?)';
-  db.query(sql, [content, media], (err, result) => {
+  db.query(sql, [content, media], (err) => {
     if (err) {
       console.error('Error creating post:', err);
-      return res.status(500).json({ error: 'Failed to create post.' });
+      return res.status(500).json({ error: 'Failed to create post' });
     }
-    res.status(201).json({ message: 'Post created successfully!' });
+    res.status(201).json({ message: 'Post created successfully' });
   });
 });
 
-// Get all posts with comments, likes, and replies
-app.get('/posts', (req, res) => {
-  const sql = `
-    SELECT p.id AS post_id, p.content, p.media, 
-           COUNT(l.id) AS likes, 
-           JSON_ARRAYAGG(JSON_OBJECT(
-             'id', c.id, 
-             'content', c.content, 
-             'parent_comment_id', c.parent_comment_id
-           )) AS comments
-    FROM posts p
-    LEFT JOIN likes l ON l.post_id = p.id
-    LEFT JOIN comments c ON c.post_id = p.id
-    GROUP BY p.id
-    ORDER BY p.id DESC
-  `;
-
-  db.query(sql, (err, results) => {
-    if (err) {
-      console.error('Error fetching posts:', err);
-      return res.status(500).json({ error: 'Failed to fetch posts.' });
-    }
-    res.json(results);
-  });
+// Serve static files (like the portfolio pages)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Like a post
-app.post('/posts/:postId/like', (req, res) => {
-  const { postId } = req.params;
-
-  const sql = 'INSERT INTO likes (post_id) VALUES (?)';
-  db.query(sql, [postId], (err, result) => {
-    if (err) {
-      console.error('Error liking post:', err);
-      return res.status(500).json({ error: 'Failed to like post.' });
-    }
-    res.json({ message: 'Post liked successfully!' });
-  });
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
-// Add a comment or reply
-app.post('/posts/:postId/comments', (req, res) => {
-  const { postId } = req.params;
-  const { content, parentCommentId } = req.body;
+app.get('/contact', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+});
 
-  const sql = 'INSERT INTO comments (post_id, content, parent_comment_id) VALUES (?, ?, ?)';
-  db.query(sql, [postId, content, parentCommentId || null], (err, result) => {
-    if (err) {
-      console.error('Error adding comment:', err);
-      return res.status(500).json({ error: 'Failed to add comment.' });
-    }
-    res.status(201).json({ message: 'Comment added successfully!' });
-  });
+app.get('/post', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'post.html'));
 });
 
 // Start the server
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

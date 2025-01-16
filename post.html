@@ -5,6 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Posts</title>
   <link rel="stylesheet" href="index.css">
+  <script>
+    // Function to handle post submission asynchronously
+    function submitPost(event) {
+      event.preventDefault();
+
+      const form = document.getElementById('postForm');
+      const formData = new FormData(form); // Using FormData to handle file upload along with other form data
+
+      fetch('/posts', {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Post uploaded successfully');
+        form.reset();
+      })
+      .catch(error => {
+        alert('Error uploading post');
+        console.error(error);
+      });
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -19,7 +42,7 @@
   <main>
     <section id="create-post">
       <h2>Share Your Thoughts</h2>
-      <form id="postForm" enctype="multipart/form-data">
+      <form id="postForm" enctype="multipart/form-data" onsubmit="submitPost(event)">
         <textarea id="postContent" name="content" placeholder="Write your thoughts here..." required></textarea><br><br>
         <label for="mediaUpload">Attach a photo or video:</label>
         <input type="file" id="mediaUpload" name="media"><br><br>
