@@ -19,7 +19,7 @@ const upload = multer({ dest: path.join(__dirname, 'uploads/') });
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '', // Add your MySQL root password
+  password: 'MySQL@7085',
   database: 'portfolio'
 });
 
