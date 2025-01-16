@@ -36,7 +36,7 @@ db.connect((err) => {
 
 // Serve the main page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'public.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Create a new post
