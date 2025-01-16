@@ -9,7 +9,7 @@
 - 🎯 My goal: Build amazing web applications!
 
 ## 🛠️ My Skills:
-- **Languages**: ![HTML](https://img.shields.io/badge/HTML-orange) ![CSS](https://img.shields.io/badge/CSS-blue) ![JavaScript](https://img.shields.io/badge/JavaScript-yellow) ![PHP](https://img.shields.io/badge/PHP-purple)
+- **Languages**: ![HTML](https://img.shields.io/badge/HTML-orange) ![CSS](https://img.shields.io/badge/CSS-blue)
 ![C](https://img.shields.io/badge/Code-C-blue?logo=c&logoColor=white)
 ![C++](https://img.shields.io/badge/Code-C++-00599C?logo=c%2B%2B&logoColor=white)
 ![Python](https://img.shields.io/badge/Code-Python-yellow?logo=python&logoColor=white)
