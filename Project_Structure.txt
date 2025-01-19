@@ -1,18 +1,7 @@
 portfolio/
 │
-├── public/
-│   ├── index.html           # Main landing page HTML
-│   ├── about.html           # About page
-│   ├── contact.html         # Contact page
-│   ├── post.html            # Post page to view posts, comment, like, reply
-│   └── styles.css           # CSS file for styling the pages
-│
-├── uploads/                 # Folder to store uploaded media (photos, videos)
-│
-├── server.js                # Main Node.js server file for backend logic
-│
-├── database.sql             # SQL file to create the database and tables
-│
-├── package.json             # Project dependencies and scripts
-├── package-lock.json        # Lock file for dependencies
-└── .gitignore               # Git ignore file to prevent unnecessary files 					from being tracked
+├── index.html       # Home page
+├── about.html       # About page
+├── contact.html     # Contact page
+├── styles.css       # CSS file for styling
+└── images/          # Folder to store your images
