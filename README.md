@@ -1,4 +1,4 @@
-<img src="https://github.com/m-irabot/m-irabot/blob/main/logo/Banner.png" alt="Banner" width="100%" />
+<img src="https://github.com/m-irabot/m-irabot/blob/main/Logo/Banner.png" alt="Banner" width="100%" />
 
 
 ## 🌟 About Me
