@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: #7faea7;
   color: #333;
 }
 
@@ -27,13 +27,22 @@ nav a {
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color:rgb(71, 156, 156);
+}
+
+nav a.active {
+  background-color: #2a8513; /* Highlight color for the active link */
+  color: white;             /* Text color for the active link */
+  font-weight: bold;        /* Bold text to stand out */
+  border-radius: 50px;       /* Rounded corners */
+  padding: 8px 15px;        /* Add padding to make it look like a button */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
 }
 
 header {
-  margin-top: 60px; /* To prevent overlap with fixed nav */
+  margin-top: 50px; /* To prevent overlap with fixed nav */
   text-align: center;
-  padding: 20px;
+  padding: 2px;
   background-color: #252f39;
   color: white;
 }
@@ -52,7 +61,7 @@ footer {
   text-align: center;
   background-color: #333;
   color: white;
-  padding: 10px 0;
+  padding: 1px 0;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -62,7 +71,7 @@ footer {
 .welcome-section {
   display: flex;
   align-items: center;
-  background-color: #e3f2fd;
+  background-color: #bbd7ec;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -168,7 +177,7 @@ footer {
   border-radius: 8px;
   background-color: #f6f8f9;
   padding: 10px;
-  display: flex;
+  display:flex;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -197,3 +206,4 @@ footer {
   font-size: 10px;
   color: #555;
 }
+
