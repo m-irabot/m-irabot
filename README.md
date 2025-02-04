@@ -2,11 +2,9 @@
 
 
 ## 🌟 About Me
-- 🌱 I’m learning **web development** with HTML, CSS,     
-   JavaScript, and PHP.
-- 💻 Currently exploring Git, GitHub, and Visual Studio Code to 
-   boost my skills.
-- 🎯 My goal: Build amazing web applications!
+- 🌱 I’m currently learning **web development** with HTML, CSS,....etc
+- 💻 Currently exploring new tools to boost my skills.
+- 🎯 My goal: 
 
 ## 🛠️ My Skills:
 - **Languages**: Nothing
